@@ -10,7 +10,7 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 st.write("""
-# This is my first app for following Stocks
+# This is my first app for following Stocks. The suggestions are RANDOM and should not be followed
 Select your reference to compare with my selected stocks
 """)
 start=datetime(2021,3,1)
