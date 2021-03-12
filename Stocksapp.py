@@ -44,30 +44,29 @@ sglb=yf.download('SGLB',start=start,end=end)
 bioc=yf.download('BIOC',start=start,end=end)
 phun=yf.download('PHUN',start=start,end=end)
 
- 
+netChangeR=(sglb['Close'].iloc[-1]-sglb['Close'].iloc[0])/sglb['Close'].iloc[0]*100 
 st.write('The net gain in the Sigma Labs stock is ',netChangeR,'%')
 if netChangeR>1.5:
     st.header("SELL")
 else:
     st.header("HOLD")  
 st.line_chart(sglb['Close'])
-netChangeR=(sglb['Close'].iloc[-1]-sglb['Close'].iloc[0])/sglb['Close'].iloc[0]*100
 
+netChangeR=(bioc['Close'].iloc[-1]-bioc['Close'].iloc[0])/bioc['Close'].iloc[0]*100
 st.write('The net gain in the BIOCEPT Labs stock is ',netChangeR,'%')
 if netChangeR>1.5:
     st.header("SELL")
 else:
     st.header("HOLD")  
 st.line_chart(bioc['Close'])
-netChangeR=(bioc['Close'].iloc[-1]-bioc['Close'].iloc[0])/bioc['Close'].iloc[0]*100
 
 
+netChangeR=(phun['Close'].iloc[-1]-phun['Close'].iloc[0])/phun['Close'].iloc[0]*100
 st.write('The net gain in the PhunWare Labs stock is ',netChangeR,'%')
 if netChangeR>1.5:
     st.header("SELL")
 else:
     st.header("HOLD")  
 st.line_chart(phun['Close'])
-netChangeR=(phun['Close'].iloc[-1]-phun['Close'].iloc[0])/phun['Close'].iloc[0]*100
 
 
