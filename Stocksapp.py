@@ -13,8 +13,8 @@ st.write("""
 # This is my first app for following Stocks. The suggestions are RANDOM and should not be followed
 Select your reference to compare with my selected stocks
 """)
-start=datetime(2021,3,1)
-end=datetime(2021,4,1)
+start=datetime(2021,03,01)
+end=datetime(2021,04,01)
 
 ticker = st.select_slider(
      'Select a Reference from Tesla, Apple, Bitcoin or Nasdaq',
