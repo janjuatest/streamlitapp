@@ -38,35 +38,18 @@ st.write("""
 ## These are my stocks
 """)
 
-myBasket=['SGLB','BIOC','PHUN']
+myBasket=['SGLB','BIOC','ATOS','GNUS','VNTR','GEVO','LXRX']
 
-sglb=yf.download('SGLB',start=start,end=end)
-bioc=yf.download('BIOC',start=start,end=end)
-phun=yf.download('PHUN',start=start,end=end)
-
-netChangeR=(sglb['Close'].iloc[-1]-sglb['Close'].iloc[0])/sglb['Close'].iloc[0]*100 
-st.write('The net gain in the Sigma Labs stock is ',netChangeR,'%')
-if netChangeR>1.5:
-    st.header("SELL")
-else:
-    st.header("HOLD")  
-st.line_chart(sglb['Close'])
-
-netChangeR=(bioc['Close'].iloc[-1]-bioc['Close'].iloc[0])/bioc['Close'].iloc[0]*100
-st.write('The net gain in the BIOCEPT Labs stock is ',netChangeR,'%')
-if netChangeR>1.5:
-    st.header("SELL")
-else:
-    st.header("HOLD")  
-st.line_chart(bioc['Close'])
+for ticker in myBasket:
+    df=yf.download(ticker,start=start,end=end)
+    netChangeR=(df['Close'].iloc[-1]-df['Close'].iloc[0])/df['Close'].iloc[0]*100
+    st.write('The net gain for ', ticker ,' ',netChangeR,'%')
+    if netChangeR>200:
+        st.header("SELL")
+    else:
+        st.header("HOLD")  
+    st.line_chart(df['Close'])
 
 
-netChangeR=(phun['Close'].iloc[-1]-phun['Close'].iloc[0])/phun['Close'].iloc[0]*100
-st.write('The net gain in the PhunWare Labs stock is ',netChangeR,'%')
-if netChangeR>1.5:
-    st.header("SELL")
-else:
-    st.header("HOLD")  
-st.line_chart(phun['Close'])
 
 
