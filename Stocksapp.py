@@ -13,7 +13,7 @@ st.write("""
 # This is my first app for following Stocks. The suggestions are RANDOM and should not be followed
 Select your reference to compare with my selected stocks
 """)
-start=datetime(2021,3,12)
+start=datetime(2021,3,11)
 end=datetime(2021,4,1)
 
 ticker = st.select_slider(
